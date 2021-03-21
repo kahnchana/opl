@@ -19,7 +19,8 @@
 5) [Evaluation](#Evaluation)
 6) [What Can You Do?](#What-Can-You-Do)  
 7) [Citation](#Citation) 
-8) [Visual Examples](#Visual-Examples) 
+8) [Quantitative Results](#Quantitative-Results) 
+9) [Qualitative Results](#Qualitative-Results)
 
 ## Contributions
 
