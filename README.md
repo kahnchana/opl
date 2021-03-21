@@ -1,7 +1,7 @@
 ## Abstract
 
 <p align="center">
-  <img src="https://kahnchana.github.io/images/images_awards/ " alt="Photo" style="width: 80%;"/> 
+  <img src="https://kahnchana.github.io/opl/images/opl_intro.png " alt="Photo" style="width: 50%;"/> 
 </p>
 
 
