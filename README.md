@@ -27,9 +27,7 @@
 2. Our orthogonality constraints are efficiently formulated in comparison to existing  methods, allowing mini-batch processing without the need for explicit calculation of singular values. This leads to a simple vectorized implementation of OPL directly integrating with CE.
 3. We conduct extensive evaluations on a diverse range of image classification tasks highlighting the discriminative ability of OPL. Further, our results on few-shot learning (FSL) and domain generalization (DG) datasets establish the transferability and generalizability of features learned with OPL. Finally, we establish the improved robustness of learned features to adversarial attacks and label noise.
 
-<p align="center">
-  <img src="https://kahnchana.github.io/opl/images/opl_intro.png " alt="Photo" style="width: 90%;"/> 
-</p>
+![alt text](https://kahnchana.github.io/opl/images/opl_intro.png "OPL explanation")
 
 
 ## Usage
@@ -123,6 +121,4 @@ We present qualitative results for training with OPL (against a CE only backbone
 
 ## Qualitative Results
 We present some examples for qualitative improvements over imagenet below.
-<p>
-  <img src="assets/images/joint_008.jpg " alt="Photo" style="width: 50%;"/> 
-</p>
+<img src="assets/images/joint_008.jpg" width=50%>
