@@ -1,5 +1,5 @@
 # Orthogonal Projection Loss
-[Kanchana Ranasinghe](http://kahnchana.github.io/),
+[Kanchana Ranasinghe](https://scholar.google.com/citations?user=K2WBZTwAAAAJ),
 [Muzammal Naseer](https://scholar.google.ch/citations?user=tM9xKA8AAAAJ&hl=en),
 [Munawar Hayat](https://scholar.google.ch/citations?user=Mx8MbWYAAAAJ&hl=en&oi=ao), 
 [Salman Khan](https://scholar.google.com/citations?user=M59O9lkAAAAJ&hl=en), and
