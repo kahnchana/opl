@@ -2,7 +2,7 @@
 [Kanchana Ranasinghe](https://scholar.google.com/citations?user=K2WBZTwAAAAJ),
 [Muzammal Naseer](https://scholar.google.ch/citations?user=tM9xKA8AAAAJ&hl=en),
 [Munawar Hayat](https://scholar.google.ch/citations?user=Mx8MbWYAAAAJ&hl=en&oi=ao), 
-[Salman Khan](https://scholar.google.com/citations?user=M59O9lkAAAAJ&hl=en), and
+[Salman Khan](https://scholar.google.com/citations?user=M59O9lkAAAAJ&hl=en), &
 [Fahad Shahbaz Khan](https://scholar.google.ch/citations?user=zvaeYnUAAAAJ&hl=en&oi=ao)
 
 **[Paper Link]()** | **[Project Page](https://kahnchana.github.io/opl/)**
