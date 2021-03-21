@@ -27,7 +27,7 @@
 2. Our orthogonality constraints are efficiently formulated in comparison to existing  methods, allowing mini-batch processing without the need for explicit calculation of singular values. This leads to a simple vectorized implementation of OPL directly integrating with CE.
 3. We conduct extensive evaluations on a diverse range of image classification tasks highlighting the discriminative ability of OPL. Further, our results on few-shot learning (FSL) and domain generalization (DG) datasets establish the transferability and generalizability of features learned with OPL. Finally, we establish the improved robustness of learned features to adversarial attacks and label noise.
 
-<img src="https://kahnchana.github.io/opl/images/opl_intro.png" width="50%"/>
+<img src="https://kahnchana.github.io/opl/images/opl_intro.png" width="50%" class="center" alt="OPL explanation"/>
 
 ## Usage
 Refer to requirements.txt for dependencies. Orthogonal Projection Loss (OPL) can be simply plugged-in with any standard
