@@ -123,4 +123,18 @@ We present qualitative results for training with OPL (against a CE only backbone
 
 ## Qualitative Results
 We present some examples for qualitative improvements over imagenet below.
-<img src="assets/images/joint_008.jpg" width=50%>
+<p align="center">
+  <img src="assets/images/joint_008.jpg" width=24%>
+  <img src="assets/images/joint_010.jpg" width=24%>
+  <img src="assets/images/joint_018.jpg" width=24%>
+  <img src="assets/images/joint_021.jpg" width=24%>
+  <img src="assets/images/joint_030.jpg" width=24%>
+  <img src="assets/images/joint_040.jpg" width=24%>
+  <img src="assets/images/joint_043.jpg" width=24%>
+  <img src="assets/images/joint_077.jpg" width=24%>
+  <img src="assets/images/joint_082.jpg" width=24%>
+  <img src="assets/images/joint_087.jpg" width=24%>
+  <img src="assets/images/joint_090.jpg" width=24%>
+  <img src="assets/images/joint_093.jpg" width=24%>
+</p>
+
