@@ -66,16 +66,11 @@ please consider [citing our work](#Citation).*
 
 
 ## Training
-```
-  Coming Soon
-```
+Refer to the sub-folders for CIFAR-100 (`cifar`), ImageNet (`imagenet`), and few-shot learning (`rfs`) training. The `README.MD` within each directory contains the training instructions for that task. 
 
 ## Evaluation
+Refer to the relevant sub-folders (same as in [Training](#training) above). You can find the pretrained models for these tasks on our [releases page](https://github.com/kahnchana/opl/releases/tag/v1.0.0).
 
-Run the following to evaluate on ImageNet Validation
-```
-  Coming Soon 
-```
 
 ## What Can You Do?
 For future work, we hope to explore the following: 
