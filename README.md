@@ -66,7 +66,7 @@ please consider [citing our work](#Citation).*
 
 
 ## Training
-Refer to the sub-folders for CIFAR-100 (`cifar`), ImageNet (`imagenet`), and few-shot learning (`rfs`) training. The `README.MD` within each directory contains the training instructions for that task. 
+Refer to the sub-folders for CIFAR-100 (`cifar`), ImageNet (`imagenet`), few-shot learning (`rfs`) training, and label noise training (`truncated_loss`). The `README.MD` within each directory contains the training instructions for that task. 
 
 ## Evaluation
 Refer to the relevant sub-folders (same as in [Training](#training) above). You can find the pretrained models for these tasks on our [releases page](https://github.com/kahnchana/opl/releases/tag/v1.0.0).
@@ -116,6 +116,15 @@ We present qualitative results for training with OPL (against a CE only backbone
 | Neg-Cosine            	|    &#10004;  	|       -       |       -      	| 63.85&pm;0.81 	| 81.57&pm;0.56 	|        -       	|        -       	|
 | SKD                   	|    &#10004;  	| 74.50&pm;0.9 	| 88.00&pm;0.6 	| 65.93&pm;0.81 	| 83.15&pm;0.54 	| 71.69&pm;0.91 	| 86.66&pm;0.60 	|
 | SKD + OPL (Ours)      	|    &#10004;  	| 74.94&pm;0.4 	| 88.06&pm;0.3 	| 66.90&pm;0.37 	| 83.23&pm;0.25 	| 72.10&pm;0.41 	| 86.70&pm;0.27 	|
+
+
+### Classification: Label Noise
+| Dataset  	| Method 	| Uniform 	| Class Dependent 	|
+|----------	|--------	|:-------:	|:---------------:	|
+| CIFAR10  	| TL     	| 87.62\% 	|     82.28\%     	|
+|          	| TL+OPL 	| 88.45\% 	|     87.02\%     	|
+| CIFAR100 	| TL     	| 62.64\% 	|     47.66\%     	|
+|          	| TL+OPL 	| 65.62\% 	|     53.94\%     	|
 
 
 ## Qualitative Results
