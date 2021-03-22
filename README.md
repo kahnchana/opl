@@ -34,7 +34,7 @@
 
 
 ## Usage
-Refer to requirements.txt for dependencies. Orthogonal Projection Loss (OPL) can be simply plugged-in with any standard
+Refer to `requirements.txt` for dependencies. Orthogonal Projection Loss (OPL) can be simply plugged-in with any standard
 loss function similar to Softmax Cross-Entropy Loss (CE) as below. You may need to edit the forward function of your 
 model to output features (we use the penultimate feature maps) alongside the final logits. You can set the gamma and 
 lambda values to default as 0.5 and 1 respectively. 
@@ -60,7 +60,8 @@ for inputs, targets in dataloader:
 
 
 ## Pretrained Models
-*If you find our OPL pretrained models useful, please consider [citing our work](#Citation).*
+*If you find our [OPL pretrained models](https://github.com/kahnchana/opl/releases/tag/v1.0.0) useful, 
+please consider [citing our work](#Citation).*
 
 
 
