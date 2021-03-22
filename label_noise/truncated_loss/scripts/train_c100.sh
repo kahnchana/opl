@@ -1,0 +1,12 @@
+python main.py \
+  --dataset cifar100 \
+  --noise_type pairflip \
+  --noise_rate 0.4 \
+  --schedule 80 120 \
+  --start_prune 80 \
+  --epochs 150 \
+  --batch-size 128 \
+  --lr 0.01 \
+  --opl \
+  --opl_ratio 0.1 \
+  --sess "c100_opl_01"

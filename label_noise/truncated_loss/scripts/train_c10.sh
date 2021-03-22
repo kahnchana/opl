@@ -1,0 +1,12 @@
+python main.py \
+  --dataset cifar10 \
+  --noise_type symmetric \
+  --noise_rate 0.4 \
+  --schedule 40 80 \
+  --start_prune 40 \
+  --epochs 120 \
+  --batch-size 128 \
+  --lr 0.01 \
+  --opl \
+  --opl_ratio 0.1 \
+  --sess "c10_opl_01"
