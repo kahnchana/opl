@@ -1,34 +1,21 @@
 # train.py
-#!/usr/bin/env	python3
+# !/usr/bin/env	python3
 
-""" train network using pytorch
-
-author baiyu
-"""
-
-import os
-import sys
 import argparse
-import time
-from datetime import datetime
 import json
-import numpy as np
+import os
+import time
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import torchvision
-import torchvision.transforms as transforms
-
-from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
 from conf import settings
-from utils import get_network, get_training_dataloader, get_test_dataloader, WarmUpLR, \
-    most_recent_folder, most_recent_weights, last_epoch, best_acc_weights, get_train_valid_loader
 from losses import OrthogonalProjectionLoss, DistillationOrthogonalProjectionLoss, CenterLoss, \
-    PerpetualOrthogonalProjectionLoss, RBFLogits, cam_loss_kd_topk
-from datasets.aircraft import FGVCAircraft
-from OLE import OLELoss
+    PerpetualOrthogonalProjectionLoss, cam_loss_kd_topk
+from utils import get_network, get_test_dataloader, WarmUpLR, \
+    most_recent_folder, most_recent_weights, last_epoch, best_acc_weights, get_train_valid_loader
 
 embedding_dim = {
     'resnet56': 64,
@@ -37,7 +24,6 @@ embedding_dim = {
 
 
 def train(epoch, use_opl=False, distill=False):
-
     start = time.time()
     net.train()
     for batch_index, data in enumerate(training_loader):
@@ -113,7 +99,7 @@ def train(epoch, use_opl=False, distill=False):
             total_samples=len(training_loader.dataset)
         ))
 
-        #update training loss for each iteration
+        # update training loss for each iteration
         writer.add_scalar('Train/loss', loss.item(), n_iter)
         writer.add_scalar('Train/ce_loss', base_loss.item(), n_iter)
         # if use_opl:
@@ -136,13 +122,13 @@ def train(epoch, use_opl=False, distill=False):
 
     print('epoch {} training time consumed: {:.2f}s'.format(epoch, finish - start))
 
+
 @torch.no_grad()
 def eval_training(epoch=0, tb=True, data_loader=None, run="Test"):
-
     start = time.time()
     net.eval()
 
-    test_loss = 0.0 # cost function error
+    test_loss = 0.0  # cost function error
     correct = 0.0
 
     dataset_size = 0
@@ -202,7 +188,7 @@ class AverageMeter(object):
         self.avg = self.sum / self.count
 
 
-def accuracy(output, target, topk=(1,5)):
+def accuracy(output, target, topk=(1, 5)):
     """Computes the precision@k for the specified values of k"""
     maxk = max(topk)
     batch_size = target.size(0)
@@ -297,53 +283,21 @@ if __name__ == '__main__':
         teacher_net = None
         distill_loss = None
 
-    if args.dataset == "aircraft":
-        # data preprocessing:
-        normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                         std=[0.229, 0.224, 0.225])
-        transform_list = transforms.Compose([
-            transforms.RandomResizedCrop(224),
-            transforms.RandomHorizontalFlip(),
-            transforms.ToTensor(),
-            normalize,
-        ])
-        transform_test = transforms.Compose([
-            transforms.ToTensor(),
-            normalize,
-        ])
+    training_loader, validation_loader = get_train_valid_loader(
+        num_workers=4,
+        batch_size=args.b,
+        shuffle=True,
+        valid_size=0.1
+    )
 
-        training_loader = torch.utils.data.DataLoader(
-            dataset=FGVCAircraft(root="/home/kanchanaranasinghe/data/raw/fgvc-aircraft-2013b", train=True,
-                                 transform=transform_list),
-            shuffle=True,
-            num_workers=4,
-            batch_size=args.b,
-        )
-
-        test_loader = torch.utils.data.DataLoader(
-            dataset=FGVCAircraft(root="/home/kanchanaranasinghe/data/raw/fgvc-aircraft-2013b", train=False,
-                                 transform=transform_test),
-            shuffle=True,
-            num_workers=4,
-            batch_size=args.b,
-        )
-
-    else:
-        training_loader, validation_loader = get_train_valid_loader(
-            num_workers=4,
-            batch_size=args.b,
-            shuffle=True,
-            valid_size=0.1
-        )
-
-        test_loader = get_test_dataloader(
-            settings.CIFAR100_TRAIN_MEAN,
-            settings.CIFAR100_TRAIN_STD,
-            num_workers=4,
-            batch_size=args.b,
-            shuffle=True,
-            imbalance=args.imbalance
-        )
+    test_loader = get_test_dataloader(
+        settings.CIFAR100_TRAIN_MEAN,
+        settings.CIFAR100_TRAIN_STD,
+        num_workers=4,
+        batch_size=args.b,
+        shuffle=True,
+        imbalance=args.imbalance
+    )
 
     loss_function = nn.CrossEntropyLoss()
     params = net.parameters()
@@ -368,7 +322,8 @@ if __name__ == '__main__':
     else:
         optimizer = optim.SGD(params=params, lr=args.lr, momentum=0.9, weight_decay=5e-4)
 
-    train_scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=settings.MILESTONES, gamma=0.2) #learning rate decay
+    train_scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=settings.MILESTONES,
+                                                     gamma=0.2)  # learning rate decay
     iter_per_epoch = len(training_loader)
     warmup_scheduler = WarmUpLR(optimizer, iter_per_epoch * args.warm)
 
@@ -385,7 +340,7 @@ if __name__ == '__main__':
     else:
         checkpoint_path = os.path.join(settings.CHECKPOINT_PATH, args.net, settings.TIME_NOW)
 
-    #create checkpoint folder to save model
+    # create checkpoint folder to save model
     if not args.eval:
         # use tensorboard
         if not os.path.exists(settings.LOG_DIR):
@@ -453,7 +408,7 @@ if __name__ == '__main__':
             val_accuracy.append(val_acc)
             test_accuracy.append(test_accuracy)
 
-            #start to save best performance model after learning rate decay to 0.01
+            # start to save best performance model after learning rate decay to 0.01
             if epoch > settings.MILESTONES[1] and best_acc < acc:
                 weights_path = checkpoint_path.format(net=args.net, epoch=epoch, type='best')
                 print('saving weights file to {}'.format(weights_path))
