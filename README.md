@@ -85,9 +85,9 @@ Refer to the relevant sub-folders (same as in [Training](#training) above). You 
 
 ## What Can You Do?
 For future work, we hope to explore the following: 
-* Adaptation of OPL for un-supervised representation learning 
-* OPL performance with vision transformers (e.g DeiT)
-* Testing OPL performance on class-imbalanced datasets
+* Test how OPL can be adapted for un-supervised representation learning 
+* Test the performance of OPL on more architectures (e.g. vision transformers)
+* Test how OPL performs on class-imbalanced datasets
 
 
 ## Quantitative Results
