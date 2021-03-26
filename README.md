@@ -82,12 +82,14 @@ For future work, we hope to explore the following:
 ## Citation
 
 ```bibtex
-    @InProceedings{,
-        title={Orthogonal Projection Loss},
-        author={},
-        year={2021},
-        booktitle={ArXiv preprint arXiv:}
-    }
+@misc{ranasinghe2021orthogonal,
+      title={Orthogonal Projection Loss}, 
+      author={Kanchana Ranasinghe and Muzammal Naseer and Munawar Hayat and Salman Khan and Fahad Shahbaz Khan},
+      year={2021},
+      eprint={2103.14021},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 ## Quantitative Results
