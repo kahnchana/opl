@@ -5,11 +5,23 @@
 [Salman Khan](https://scholar.google.com/citations?user=M59O9lkAAAAJ&hl=en), &
 [Fahad Shahbaz Khan](https://scholar.google.ch/citations?user=zvaeYnUAAAAJ&hl=en&oi=ao)
 
-**[Paper Link]()** | **[Project Page](https://kahnchana.github.io/opl/)**
+**[Paper Link](https://arxiv.org/abs/2103.14021)** 
 
 > **Abstract:** 
 >*Deep neural networks have achieved remarkable performance on a range of classification tasks, with softmax cross-entropy (CE) loss emerging as the de-facto objective function. The CE loss encourages features of a class to have a higher projection score on the true class-vector compared to the negative classes. However, this is a relative constraint and does not explicitly force different class features to be well-separated. Motivated by the observation that ground-truth class representations in CE loss are orthogonal (one-hot encoded vectors), we develop a novel loss function termed “Orthogonal Projection Loss” (OPL) which imposes orthogonality in the feature space. OPL augments the properties of CE loss and directly enforces inter-class separation alongside intra-class clustering in the feature space through orthogonality constraints on the mini-batch level. As compared to other alternatives of CE, OPL offers unique advantages e.g., no additional learnable parameters, does not require careful negative mining and is not sensitive to the batch size. Given the plug-and-play nature of OPL, we evaluate it on a diverse range of tasks including image recognition (CIFAR-100), large-scale classification (ImageNet), domain generalization (PACS) and few-shot learning (miniImageNet, CIFAR-FS, tiered-ImageNet and Meta-dataset) and demonstrate its effectiveness across the board. Furthermore, OPL offers better robustness against practical nuisances such as adversarial attacks and label noise.* 
 
+## Citation
+
+```bibtex
+@misc{ranasinghe2021orthogonal,
+      title={Orthogonal Projection Loss}, 
+      author={Kanchana Ranasinghe and Muzammal Naseer and Munawar Hayat and Salman Khan and Fahad Shahbaz Khan},
+      year={2021},
+      eprint={2103.14021},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
 
 ### Table of Contents  
 1) [Contributions](#Contributions) 
@@ -18,9 +30,8 @@
 4) [Training](#Training)
 5) [Evaluation](#Evaluation)
 6) [What Can You Do?](#What-Can-You-Do)  
-7) [Citation](#Citation) 
-8) [Quantitative Results](#Quantitative-Results) 
-9) [Qualitative Results](#Qualitative-Results)
+7) [Quantitative Results](#Quantitative-Results) 
+8) [Qualitative Results](#Qualitative-Results)
 
 ## Contributions
 
@@ -74,21 +85,10 @@ Refer to the relevant sub-folders (same as in [Training](#training) above). You 
 
 ## What Can You Do?
 For future work, we hope to explore the following: 
-* Adaptation of OPL for un-supervised representation learning 
-* OPL performance with vision transformers (e.g DeiT)
-* Testing OPL performance on class-imbalanced datasets
+* Test how OPL can be adapted for un-supervised representation learning 
+* Test the performance of OPL on more architectures (e.g. vision transformers)
+* Test how OPL performs on class-imbalanced datasets
 
-
-## Citation
-
-```bibtex
-    @InProceedings{,
-        title={Orthogonal Projection Loss},
-        author={},
-        year={2021},
-        booktitle={ArXiv preprint arXiv:}
-    }
-```
 
 ## Quantitative Results
 We present qualitative results for training with OPL (against a CE only backbone) for various classification tasks. 
