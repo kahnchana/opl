@@ -84,13 +84,6 @@ def train(epoch, use_opl=False, distill=False):
 
         n_iter = (epoch - 1) * len(training_loader) + batch_index + 1
 
-        # last_layer = list(net.children())[-1]
-        # for name, para in last_layer.named_parameters():
-        #     if 'weight' in name:
-        #         writer.add_scalar('LastLayerGradients/grad_norm2_weights', para.grad.norm(), n_iter)
-        #     if 'bias' in name:
-        #         writer.add_scalar('LastLayerGradients/grad_norm2_bias', para.grad.norm(), n_iter)
-
         print('Training Epoch: {epoch} [{trained_samples}/{total_samples}]\tLoss: {:0.4f}\tLR: {:0.6f}'.format(
             loss.item(),
             optimizer.param_groups[0]['lr'],
