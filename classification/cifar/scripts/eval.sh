@@ -6,4 +6,4 @@ python train.py \
   -b 256 \
   -eval \
   -resume \
-  -pth "path/to/model/dir"
+  -pth "name_of_exp_folder. e.g: Thursday_01_April_2021_10h_10m_42s"

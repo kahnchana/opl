@@ -1,3 +1,8 @@
+# Project related
+classification/cifar/data
+classification/cifar/runs
+classification/cifar/checkpoint
+
 # Pycharm
 .idea
 
