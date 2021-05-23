@@ -23,7 +23,7 @@
 }
 ```
 
-### Table of Contents  
+## Table of Contents  
 1) [Contributions](#Contributions) 
 2) [Usage](#Usage)
 3) [Pretrained Models](#Pretrained-Models) 
