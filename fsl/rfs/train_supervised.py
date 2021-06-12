@@ -47,6 +47,7 @@ def parse_option():
     parser.add_argument('--opl', action='store_true', help='add opl as auxiliary loss')
     parser.add_argument('--popl', action='store_true', help='add popl as auxiliary loss')
     parser.add_argument('--opl_ratio', type=float, default=1, help='ratio for opl')
+    parser.add_argument('--opl_gamma', type=float, default=1, help='ratio for opl')
     parser.add_argument('--srl', action='store_true', help='add opl as auxiliary loss')
     parser.add_argument('--srl_ratio', type=float, default=1, help='ratio for opl')
     parser.add_argument('--label_smoothing', action='store_true', help='replace CE with label smoothing loss')
@@ -246,7 +247,7 @@ def main():
     else:
         criterion = nn.CrossEntropyLoss()
     if opt.opl:
-        auxiliary_loss = OrthogonalProjectionLoss(use_attention=True)
+        auxiliary_loss = OrthogonalProjectionLoss(use_attention=False, gamma=opt.opl_gamma)
     elif opt.popl:
         auxiliary_loss = PerpetualOrthogonalProjectionLoss(feat_dim=640)
     else:

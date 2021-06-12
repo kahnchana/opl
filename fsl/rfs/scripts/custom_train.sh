@@ -1,12 +1,10 @@
 # supervised pre-training
-EXP="opl_01"
+
 DATASET="CIFAR-FS"
 #DATASET="miniImageNet"
 #DATASET="tieredImageNet"
 DATA_ROOT="$HOME/data/cache"
-PROJECT_PATH="$HOME/repo/rfs"
-
-cd "$PROJECT_PATH" || exit
+EXP="opl_01"
 
 python train_supervised.py \
   --dataset "${DATASET}" \

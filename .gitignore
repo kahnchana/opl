@@ -3,6 +3,7 @@ classification/cifar/data
 classification/cifar/runs
 classification/cifar/checkpoint
 
+fsl/rfs/ckpts
 # Pycharm
 .idea
 

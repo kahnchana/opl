@@ -89,9 +89,11 @@ def accuracy(output, target, topk=(1,)):
 
 
 class OrthogonalProjectionLoss(nn.Module):
-    def __init__(self, no_norm=False, use_attention=False):
+    def __init__(self, no_norm=False, use_attention=False, gamma=1):
         super(OrthogonalProjectionLoss, self).__init__()
+        self.weights_dict = None
         self.no_norm = no_norm
+        self.gamma = gamma
         self.use_attention = use_attention
 
     def forward(self, features, labels=None):
@@ -107,7 +109,6 @@ class OrthogonalProjectionLoss(nn.Module):
             features = F.normalize(features, p=2, dim=1)
 
         labels = labels[:, None]  # extend dim
-
         mask = torch.eq(labels, labels.t()).bool().to(device)
         eye = torch.eye(mask.shape[0], mask.shape[1]).bool().to(device)
 
@@ -118,7 +119,7 @@ class OrthogonalProjectionLoss(nn.Module):
         pos_pairs_mean = (mask_pos * dot_prod).sum() / (mask_pos.sum() + 1e-6)
         neg_pairs_mean = torch.abs(mask_neg * dot_prod).sum() / (mask_neg.sum() + 1e-6)
 
-        loss = (1.0 - pos_pairs_mean) + (2.0 * neg_pairs_mean)
+        loss = (1.0 - pos_pairs_mean) + (self.gamma * neg_pairs_mean)
 
         return loss
 
