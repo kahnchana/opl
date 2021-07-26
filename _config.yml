@@ -1,7 +1,0 @@
-# please use `bundle exec jekyll serve` to get same output as when on github.io
-
-theme: jekyll-theme-slate
-
-title: [Orthogonal Projection Loss]
-description: [Towards more discriminative and generalizable feature learning using Orthogonal Constraints]
-
