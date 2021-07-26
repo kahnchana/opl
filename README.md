@@ -1,4 +1,4 @@
-# Orthogonal Projection Loss
+# Orthogonal Projection Loss (ICCV'21)
 [Kanchana Ranasinghe](https://scholar.google.com/citations?user=K2WBZTwAAAAJ),
 [Muzammal Naseer](https://scholar.google.ch/citations?user=tM9xKA8AAAAJ&hl=en),
 [Munawar Hayat](https://scholar.google.ch/citations?user=Mx8MbWYAAAAJ&hl=en&oi=ao), 
@@ -13,13 +13,12 @@
 ## Citation
 
 ```bibtex
-@misc{ranasinghe2021orthogonal,
-      title={Orthogonal Projection Loss}, 
-      author={Kanchana Ranasinghe and Muzammal Naseer and Munawar Hayat and Salman Khan and Fahad Shahbaz Khan},
-      year={2021},
-      eprint={2103.14021},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@article{kanchana2021orthogonal,
+  title={Orthogonal Projection Loss},
+  author={Ranasinghe, Kanchana and  Naseer, Muzammal and Hayat, Munawar and Khan, Salman and Khan, Fahad Shahbaz},
+  journal={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  publisher = {IEEE},
+  year={2021}
 }
 ```
 
