@@ -13,12 +13,13 @@
 ## Citation
 
 ```bibtex
-@article{ranasinghe2021orthogonal,
-  title={Orthogonal Projection Loss},
-  author={Ranasinghe, Kanchana and  Naseer, Muzammal and Hayat, Munawar and Khan, Salman and Khan, Fahad Shahbaz},
-  journal={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-  publisher = {IEEE},
-  year={2021}
+@InProceedings{Ranasinghe_2021_ICCV,
+    author    = {Ranasinghe, Kanchana and Naseer, Muzammal and Hayat, Munawar and Khan, Salman and Khan, Fahad Shahbaz},
+    title     = {Orthogonal Projection Loss},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2021},
+    pages     = {12333-12343}
 }
 ```
 
